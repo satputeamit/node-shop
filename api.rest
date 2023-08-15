@@ -1,0 +1,24 @@
+# ADD USER
+POST http://localhost:4000/user/adduser
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoiYW1pdDIiLCJsYXN0X25hbWUiOiJzIiwiZW1haWwiOiJhQHNvby5jb20iLCJpYXQiOjE2OTIxMTQzOTB9.FAUEOhnatodlM-u6Zca7kQOrWODYLhm1BRVI9wYc87s
+
+{
+    "f_name":"amit3",
+    "l_name":"s",
+    "address":"sangli",
+    "email":"a@sooi.com",
+    "contact":"987654388",
+    "password":"hello"
+}
+
+###
+
+# LOGIN
+POST http://localhost:4000/user/login
+Content-Type: application/json
+
+{   
+    "email":"a@soo.com",  
+    "password":"hello"
+}
