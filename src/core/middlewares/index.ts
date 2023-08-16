@@ -13,7 +13,7 @@ export function verifyUser(req: Request, res: Response, next: NextFunction) {
             if (err) {
               res.status(403).send({ success: false, message: "Authentication failed..." })
             } else {   
-              (<any>req).decoded = decoded       
+              (<any>req).user_info = decoded       
               next()
             }
           })              
