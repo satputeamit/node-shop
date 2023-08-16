@@ -25,3 +25,25 @@ export async function getProducts(): Promise<any> {
     return data;
 }
 
+export async function deleteProduct(id: string, user_id:string): Promise<any> {
+
+    const response = await sendServiceRequest(
+        `${productServiceUrl}/deleteproduct/${id}`,
+        "DELETE",
+        {user_id}       
+    );
+    const data = await response.json();
+    return data
+
+}
+
+export async function updateProduct(id: string, productObj:AddProduct) {
+    const response = await sendServiceRequest(
+        `${productServiceUrl}/updateproduct/${id}`,
+        "PATCH",
+        productObj
+       
+    );
+    const data = await response.json();
+    return data
+}

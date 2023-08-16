@@ -27,7 +27,7 @@ Content-Type: application/json
 # Add product
 POST http://localhost:4000/product/addproduct
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoiYW1pdDIiLCJsYXN0X25hbWUiOiJzIiwiZW1haWwiOiJhQHNvby5jb20iLCJpYXQiOjE2OTIxODA3NTh9.ETJsvdkoqcijIekZfEdpe5SOn3JVU5ogJQqGKqfDLv4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU4NzM0YzQ4LWFhOTQtNDE0My04Mzc0LTc1ZDkyZWNhNGJkMiIsImZpcnN0X25hbWUiOiJhbWl0MiIsImxhc3RfbmFtZSI6InMiLCJlbWFpbCI6ImFAc29vLmNvbSIsImlhdCI6MTY5MjE4Njc0Mn0.uogBYoJ7YAhEA-5vcoBBwtD8w3NjOG7vrIaV6GcaiU0
 
 {
     "name":"Laptop",
@@ -40,3 +40,27 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoiYW1pdDIi
 ###
 # GET Products list
 GET http://localhost:4000/product/products
+
+###
+#Delete 
+DELETE http://localhost:4000/product/deleteproduct/64dcb92b899633050854cb4c
+Content-Type: application/json
+
+{
+    "user_id":"e8734c48-aa94-4143-8374-75d92eca4bd2"
+}
+###
+
+#update
+
+PATCH  http://localhost:4000/product/updateproduct/64dcbbfe5510beacacbe6e11
+Content-Type: application/json
+
+{
+    "name":"Laptop",
+    "description":"16GB RAM, 1TB SSD, RTX2070TI",
+    "amount":70000,    
+    "pictures":["NA"],
+    "status":1,
+    "user_id":"e8734c48-aa94-4143-8374-75d92eca4bd2"   
+}
