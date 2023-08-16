@@ -37,3 +37,6 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoiYW1pdDIi
     "status":1   
 }
 
+###
+# GET Products list
+GET http://localhost:4000/product/products

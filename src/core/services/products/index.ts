@@ -14,3 +14,14 @@ export async function addProduct(productObj: AddProduct): Promise<any> {
     const data = await response.json();
     return data;
 }
+
+export async function getProducts(): Promise<any> {
+    const response = await sendServiceRequest(
+        `${productServiceUrl}/products`,
+        "GET"
+       
+    );
+    const data = await response.json();
+    return data;
+}
+
