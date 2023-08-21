@@ -4,11 +4,11 @@ import { addProduct, deleteProduct, getProducts, updateProduct } from "../../../
 import { decode } from "jsonwebtoken";
 
 export async function addNewProduct(
-    req: Request|any,
+    req: Request | any,
     res: Response,
     next: NextFunction
 ): Promise<void> {
-    var body = req.body    
+    var body = req.body
     body.user_id = req.user_info.id
     const data = await addProduct(body);
     res.json(data);
@@ -25,23 +25,22 @@ export async function getAllProducts(
 
 
 export async function deleteProductById(
-    req: Request|any,
+    req: Request | any,
     res: Response,
     next: NextFunction
-): Promise<void> {    
-    var id = req.params.id
-    const data = await deleteProduct(id,req.user_info.id);
+): Promise<void> {
+    const data = await deleteProduct(req.params.id, req.user_info.id);
     res.json(data);
 }
 
 export async function updateProductById(
-    req: Request|any,
+    req: Request | any,
     res: Response,
     next: NextFunction
-): Promise<void> {    
+): Promise<void> {
     var id = req.params.id
-    var body = req.body    
+    var body = req.body
     body.user_id = req.user_info.id
-    const data = await updateProduct(id,body);
+    const data = await updateProduct(id, body);
     res.json(data);
 }
